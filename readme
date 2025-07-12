@@ -7,4 +7,6 @@ to run the project run
 
 2) run docker-compose up (or if you don't want to see logs add -d in the end)
 
-3) npm run dev
+3) create .env file and populate it with the contents of env.sample
+
+4) npm run dev
