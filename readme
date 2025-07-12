@@ -1,0 +1,10 @@
+Node.js Capstone project 
+
+require docker 
+to run the project run 
+
+1)install dependencies (npm i)
+
+2) run docker-compose up (or if you don't want to see logs add -d in the end)
+
+3) npm run dev
