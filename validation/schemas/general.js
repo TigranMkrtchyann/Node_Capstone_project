@@ -18,8 +18,8 @@ const paginationSchema = Joi.object({
     from: Joi.date()
         .iso()
         .optional(),
-    limit: Joi.number().optional(),
-})
+    limit:  Joi.number().integer().min(1).optional(),
+}).unknown(true);
 
 module.exports = {
     validateParamIdAndPagination: validateRequest(null, paramsIdSchema, paginationSchema),
