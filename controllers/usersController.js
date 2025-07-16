@@ -53,9 +53,9 @@ exports.createExercise = async (req, res) => {
         }
 
         const exercise = await Exercise.create({
+            ...req.body,
             userId: id,
             date: req.body.date || getCurrentDate(),
-            ...req.body
         })
         return res.send(exercise);
 
@@ -88,6 +88,7 @@ exports.getUserExerciseLog = async (req, res, next) => {
         const queryOptions = {
             where,
             attributes: ["exerciseId", "description", "duration", "date"],
+            order: [["date", "ASC"]],
         };
         if (limit) {
             queryOptions.limit = parseInt(limit);
@@ -109,7 +110,7 @@ exports.getUserExerciseLog = async (req, res, next) => {
             count: count,
         };
 
-       return res.json(response);
+        return res.json(response);
     } catch (error) {
         console.error(error)
         return res.status(httpCodes.INTERNAL_SERVER_ERROR).send({ error });
