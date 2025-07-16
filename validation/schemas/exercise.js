@@ -3,6 +3,7 @@ const { validateRequest } = require("../validateMiddleware")
 const { paramsIdSchema } = require('./general')
 
 const schema = Joi.object({
+    ':_id':Joi.optional(),
     description: Joi.string()
         .required()
         .trim()

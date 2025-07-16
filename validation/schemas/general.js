@@ -2,7 +2,7 @@ const Joi = require('joi');
 const { validateRequest } = require("../validateMiddleware")
 
 const paramsIdSchema = Joi.object({
-    id: Joi.number().required(),
+    id: Joi.string().required(),
 })
 
 const paginationSchema = Joi.object({
